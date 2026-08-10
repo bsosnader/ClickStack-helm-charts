@@ -1,5 +1,11 @@
 # helm-charts
 
+## 3.2.0
+
+### Minor Changes
+
+- 343163d: Add explicit `hyperdx.deployment.deploymentAnnotations` and `hyperdx.deployment.podAnnotations` values while preserving `hyperdx.deployment.annotations` as a deprecated pod annotation alias. When both pod annotation values contain the same key, `podAnnotations` takes precedence.
+
 ## 3.1.1
 
 ### Patch Changes
