@@ -13,10 +13,10 @@ tests:
     asserts:
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
-          value: 0587572216112d61fd7d298001d71ed852194038be79415116a447e260753058
+          value: b76d0e7c9c3bc42636d77be4768074ac0627ebf8af4c5f75caa5ce697e7e04fe
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-secret"]
-          value: 7d047b36293876f9242bce55bbd3ce9a255e51a425934a7cea4f2ab04f86895d
+          value: dc97804d86c9e1c30f568e66a03cd377f12e0a2debeb24306c8a644013f03e52
 
   - it: should change only the ConfigMap checksum when config content changes
     template: hyperdx/deployment.yaml
@@ -27,10 +27,10 @@ tests:
     asserts:
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
-          value: 8149416c5dff3a76c98e11c8f1fef4ab3a6eca7cd68e79d6a1bd956c196499a3
+          value: 5e3f3ae827e5f86b4fa72e341fc599e3b25d66e7d0ef2927f45cbd99b7cfbd16
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-secret"]
-          value: 7d047b36293876f9242bce55bbd3ce9a255e51a425934a7cea4f2ab04f86895d
+          value: dc97804d86c9e1c30f568e66a03cd377f12e0a2debeb24306c8a644013f03e52
 
   - it: should change only the Secret checksum when independent secret content changes
     template: hyperdx/deployment.yaml
@@ -41,10 +41,10 @@ tests:
     asserts:
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
-          value: 0587572216112d61fd7d298001d71ed852194038be79415116a447e260753058
+          value: b76d0e7c9c3bc42636d77be4768074ac0627ebf8af4c5f75caa5ce697e7e04fe
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-secret"]
-          value: a94315e89cfbbe97c9d0f11a48fa845d1f324473ee64666032c9151ffb3a4349
+          value: 55205540ae9ba37fa6d226bcbccf8a7c5d039e0724ea12a4f7044af2b9d37eff
 
   - it: should omit the Secret checksum when using external secrets
     template: hyperdx/deployment.yaml
@@ -103,10 +103,10 @@ tests:
           value: preserved
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
-          value: 0587572216112d61fd7d298001d71ed852194038be79415116a447e260753058
+          value: b76d0e7c9c3bc42636d77be4768074ac0627ebf8af4c5f75caa5ce697e7e04fe
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-secret"]
-          value: 7d047b36293876f9242bce55bbd3ce9a255e51a425934a7cea4f2ab04f86895d
+          value: dc97804d86c9e1c30f568e66a03cd377f12e0a2debeb24306c8a644013f03e52
       - notEqual:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
           value: caller-value
@@ -123,7 +123,7 @@ tests:
     asserts:
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-config"]
-          value: 0587572216112d61fd7d298001d71ed852194038be79415116a447e260753058
+          value: b76d0e7c9c3bc42636d77be4768074ac0627ebf8af4c5f75caa5ce697e7e04fe
       - equal:
           path: spec.template.metadata.annotations["checksum/clickstack-secret"]
-          value: 7d047b36293876f9242bce55bbd3ce9a255e51a425934a7cea4f2ab04f86895d
+          value: dc97804d86c9e1c30f568e66a03cd377f12e0a2debeb24306c8a644013f03e52
